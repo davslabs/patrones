@@ -95,6 +95,8 @@ Entre las posibilidades disponibles se encuentran:
 - Pasar como parametro el contexto y dejar que la estrategia solicite la informacion que necesita (alto acoplamiento).
 - Matener dentro de la estrategia una referencia al contexto (alto acoplamiento).
 
+![image](https://refactoring.guru/images/patterns/diagrams/strategy/solution.png)
+
 <b>Ventajas y desventajas</b>
 
 - Ventajas
