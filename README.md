@@ -55,6 +55,8 @@ El objeto de la clase a la que le pertenece dichos estados resuelve los distinto
 - Creación/Destrucción de objetos estado:
   - Crear el objeto cuando es necesario, utilizarlo y destruirlo. (Nunca se sabe que estado toma el objeto en runtime).
   - Crear todos los objetos estado de antemano, utilizar alguno y nunca destruirlos. (Cambios rapidos de estado).
+  
+  ![image](https://user-images.githubusercontent.com/5508796/197398184-0e3e9c55-47e0-4776-8035-083f84eb2295.png)
 
 <b>Ventajas y desventajas</b>
 - Ventajas:
