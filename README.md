@@ -109,3 +109,38 @@ Entre las posibilidades disponibles se encuentran:
 <b>Relación con otros patrones</b>
 
 - El patron `Decorator` permite cambiarle la "piel" al objeto, mientras que el patron `Strategy` permite cambiarle las "tripas.
+
+## Patrón Singleton
+
+Garantiza que una clase solo tenga una instancia, y proporciona un punto de acceso global a ella.
+
+<b>Problema</b>
+- Necesidad de asegurar que solo exista un objeto gestor
+- Necesidad de implementar un patron que permita controlar o restringir las situaciones que exigen la creacion y el control de acceso a la instancia privilegiada para la tarea.
+
+<b>Solución</b>
+Todas las implementaciones de esta patron recaen en los mismos dos pasos en comun:
+- Convertir el constructor por defecto en privado, para prevenir que otros objetos puedan instanciar con `new` a la clase Singleton.
+- Crear un metodo estatico que actue como el constructor de la clase. Este metodo estatico verificara si existe creada una instancia del objeto, de ser asi devuelve dicha instancia. De lo contrario, este metodo creara una instancia de la clase Singleton para luego retornarla.
+
+<b>Implementación</b>
+- Definir una funcion estatica en la clase Singleton.
+- Esta operacion debe contener acceso a la instancia de la clase, y asegurarse de que dicha variable este inicializada antes de devolver su valor.
+- Los clientes solo pueden acceder a dicha instancia a traves de esta clase estatica.
+- No se crea y se almacena hasta que se accede a la variable por primera vez (lazy-load).
+- El constructor debe estar definido como `protected` o `private`.
+
+![image](https://refactoring.guru/images/patterns/diagrams/singleton/structure-en.png)
+
+<b>Ventajas y desventajas</b>
+- Ventajas:
+  - Acceso unico desde cualquier parte de la aplicacion y control de la instancia creada.
+  - Lazy Load (se crea la instancia solo cuando es requerida).
+- Desventajas:
+  - Su implementación se pierde dentro del sistema. Para mitigar esto se sugiere agregarle la palabra "Singleton" delante de su nombre.
+  - Puede traer complicaciones en sistema multi hilo (bloqueos, dead-locks)
+  - Puede traer problemas de descendencia, si se hereda de un objeto singleton.
+  - Controles adicionales haran mas complejo la implementación.
+
+<b>Relación con otros patrones</b>
+- Una clase `Facade` puede ser transformada en un `Singleton` dado a que un solo objeto `Facade` es suficiente en la mayoria de los casos.
