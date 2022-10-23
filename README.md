@@ -72,3 +72,38 @@ El objeto de la clase a la que le pertenece dichos estados resuelve los distinto
 <b>Relación con otros patrones</b>
   
 El patron `State` puede ser considerado una extensión del `Strategy`. Ambos patrones estan basados en composicion: Pueden cambiar el comportamiento del contexto delegando parte del trabajo a subclases. Mientras que el `Strategy` convierte objetos en estructuras completamente independientes del contexto, `State` permite a estos objetos alterar el estado del contexto si lo necesitan.
+
+## Patrón Strategy
+
+Define una familia de algoritmos, encapsula cada uno de llos y los hace intercambiables.
+
+<b>Problema</b>
+- Necesidad de implementar varios algoritmos complejos
+- Emplear distintos algoritmos apropiados en distintos momentos
+- Dificultad en agregar nuevos algoritmos o modificar existentes
+
+Cualquier programa que ofrezca una funcion o servicio, que puede ser realizado de varias maneras, es candidato a este patron.
+
+<b>Solución</b>
+
+Aplicar el patron a una clase que defina multiples comportamientos mediante instrucciones condicionales, evitando de esta forma emplear estas instrucciones, moviendo el codigo a clases independientes donde se almacenaran cada estrategia.
+
+<b>Implementación</b>
+
+Entre las posibilidades disponibles se encuentran:
+- Pasar como parametro la información necesaria para la estrategia (bajo acoplamiento).
+- Pasar como parametro el contexto y dejar que la estrategia solicite la informacion que necesita (alto acoplamiento).
+- Matener dentro de la estrategia una referencia al contexto (alto acoplamiento).
+
+<b>Ventajas y desventajas</b>
+
+- Ventajas
+  - La herencia puede ayudar a factorizar las partes comunes de las familias de algoritmos.
+  - Proporciona una alternativa a la extension de contextos, ya que puede realizarse un cambio dinamico de estrategia.
+- Desventajas
+  - El cliente debe conocer las diferentes estrategias, y debe comprender las posibilidades que ofrecen.
+  - Aumenta el numero de objetos creados
+
+<b>Relación con otros patrones</b>
+
+- El patron `Decorator` permite cambiarle la "piel" al objeto, mientras que el patron `Strategy` permite cambiarle las "tripas.
