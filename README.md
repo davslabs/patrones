@@ -1,5 +1,12 @@
 # Patrones de diseño
 
+## Listado de patrones:
+
+1. [Patrón State](#patrón-state)
+2. [Patrón Strategy](#patrón-strategy)
+3. [Patrón Singleton](#patrón-singleton)
+4. [Patrón Composite](#patrón-composite)
+
 ## Elementos principales
 1. Nombre: Describe en pocas palabras un problema de diseño
 
