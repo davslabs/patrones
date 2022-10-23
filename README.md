@@ -119,6 +119,7 @@ Garantiza que una clase solo tenga una instancia, y proporciona un punto de acce
 - Necesidad de implementar un patron que permita controlar o restringir las situaciones que exigen la creacion y el control de acceso a la instancia privilegiada para la tarea.
 
 <b>Solución</b>
+
 Todas las implementaciones de esta patron recaen en los mismos dos pasos en comun:
 - Convertir el constructor por defecto en privado, para prevenir que otros objetos puedan instanciar con `new` a la clase Singleton.
 - Crear un metodo estatico que actue como el constructor de la clase. Este metodo estatico verificara si existe creada una instancia del objeto, de ser asi devuelve dicha instancia. De lo contrario, este metodo creara una instancia de la clase Singleton para luego retornarla.
