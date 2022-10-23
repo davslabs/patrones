@@ -171,3 +171,8 @@ Diseñar una estructura que permita ser usada de forma simple o compuesta de la 
   - Puede resultar dificultoso proveer una interfaz comun para clases cuya funcionalidad difiere demasiado.
   
 <b>Relación con otros patrones</b>
+- Se puede utilizar el patron `Builder` para crear arboles `Composite` complejos.
+- `Composite` y `Decorator` tienen diagramas de estructura similares ya que ambos se basan en la composición recursiva para organizar un número indefinido de objetos.
+  - Un Decorator es como un Composite pero sólo tiene un componente hijo. Hay otra diferencia importante: Decorator añade responsabilidades adicionales al objeto envuelto, mientras que Composite se limita a “recapitular” los resultados de sus hijos.
+  - No obstante, los patrones también pueden colaborar: puedes utilizar el Decorator para extender el comportamiento de un objeto específico del árbol Composite.
+
