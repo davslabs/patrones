@@ -168,6 +168,6 @@ Diseñar una estructura que permita ser usada de forma simple o compuesta de la 
   - Permite representar una jerarquia de objetos
   - Principio `Open/Closed`. Permite introducir nuevos elementos en la aplicacion sin romper el codigo existente.
 - Desventajas
-  - Puede resultar dificultoso proveer una interfaz comun a 
+  - Puede resultar dificultoso proveer una interfaz comun para clases cuya funcionalidad difiere demasiado.
   
 <b>Relación con otros patrones</b>
