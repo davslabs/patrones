@@ -145,3 +145,29 @@ Todas las implementaciones de esta patron recaen en los mismos dos pasos en comu
 
 <b>Relación con otros patrones</b>
 - Una clase `Facade` puede ser transformada en un `Singleton` dado a que un solo objeto `Facade` es suficiente en la mayoria de los casos.
+
+## Patrón Composite
+
+Permite que los clientes traten de manera uniforme a los objetos individuales y a los compuestos.
+
+<b>Problema</b>
+
+Se presentan escenarios en los cuales existen objetos y contenedores de estos objetos en los cuales se puede requerir la invocacion de los mismos metodos o la ejecucion de las mismas responsabilidades.
+
+<b>Solución</b>
+
+Diseñar una estructura que permita ser usada de forma simple o compuesta de la misma manera, usando un mecanismo recursivo para que los clientes no tengan que saber de que estan compuestos.
+
+<b>Implementación</b>
+- Definir una interfaz comun para los objetos de la composicion y proveer una interfaz para gestionar los hijos. Dicha interfaz implementa el comportamiento por defecto comun a todas las subclases.
+- Definir un objeto simple de la composicion que defina el comportamiento primitivo.
+- Definir el objeto complejo, que almacenara a los componentes hijos.
+
+<b>Ventajas y desventajas</b>
+- Ventajas
+  - Permite representar una jerarquia de objetos
+  - Principio `Open/Closed`. Permite introducir nuevos elementos en la aplicacion sin romper el codigo existente.
+- Desventajas
+  - Puede resultar dificultoso proveer una interfaz comun a 
+  
+<b>Relación con otros patrones</b>
