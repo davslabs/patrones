@@ -170,6 +170,8 @@ Diseñar una estructura que permita ser usada de forma simple o compuesta de la 
 - Definir un objeto simple de la composicion que defina el comportamiento primitivo.
 - Definir el objeto complejo, que almacenara a los componentes hijos.
 
+<img width="931" alt="image" src="https://user-images.githubusercontent.com/5508796/197421772-96261315-7b14-4e1f-845b-7c9310d9f937.png">
+
 <b>Ventajas y desventajas</b>
 - Ventajas
   - Permite representar una jerarquia de objetos
