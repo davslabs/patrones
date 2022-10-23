@@ -1,11 +1,12 @@
 # Patrones de diseño
 
-## Listado de patrones:
+## Listado de patrones
 
 1. [Patrón State](#patrón-state)
 2. [Patrón Strategy](#patrón-strategy)
 3. [Patrón Singleton](#patrón-singleton)
 4. [Patrón Composite](#patrón-composite)
+5. [Patrón Adapter](#patrón-adapter)
 
 ## Elementos principales
 1. Nombre: Describe en pocas palabras un problema de diseño
@@ -185,3 +186,34 @@ Diseñar una estructura que permita ser usada de forma simple o compuesta de la 
   - Un Decorator es como un Composite pero sólo tiene un componente hijo. Hay otra diferencia importante: Decorator añade responsabilidades adicionales al objeto envuelto, mientras que Composite se limita a “recapitular” los resultados de sus hijos.
   - No obstante, los patrones también pueden colaborar: puedes utilizar el Decorator para extender el comportamiento de un objeto específico del árbol Composite.
 
+## Patrón Adapter
+
+Convierte la interfaz de una clase en otra interfaz que espera el cliente. Permite que clases trabajen juntas que de otra manera no podrían por no tener la misma interfaz.
+
+<b>Problema</b>
+
+Se presentan escenarios en los cuales se requiere que dos clases trabajen juntas pero no pueden por no tener la misma interfaz.
+
+<b>Solución</b>
+
+Se logra adaptando la clase necesaria mediante una del dominio, que se encargara de adaptar el funcionamiento.
+
+<b>Implementación</b>
+- Definir una interfaz del dominio que usa el Cliente.
+- Definir una interfaz existente que necesita adaptarse.
+- Crear una clase adaptadora que implemente la interfaz del dominio y contenga una instancia de la interfaz existente.
+- El cliente usara la interfaz del dominio para interactuar con la clase adaptadora.
+
+![image](https://refactoring.guru/images/patterns/diagrams/adapter/structure-object-adapter-indexed-2x.png)
+
+<b>Ventajas y desventajas</b>
+- Ventajas:
+  - Principio de responsabilidad unica: se separa la interfaz del cliente de la interfaz del servicio.
+  - Principio abierto/cerrado: se puede agregar nuevos servicios sin modificar el cliente.
+- Desventajas:
+  - Aumenta la complejidad del sistema. En ocasiones es mas sencillo crear una nueva clase que implemente la interfaz requerida.
+
+<b>Relación con otros patrones</b>
+- `Facade` define una nueva interfaz para objetos existentes, mientras que `Adapter` intenta hacer que la interfaz existente sea utilizable. Normalmente `Adapter` sólo envuelve un objeto, mientras que `Facade` trabaja con todo un subsistema de objetos.
+- `Adapter` proporciona una interfaz diferente al objeto envuelto, `Proxy` le proporciona la misma interfaz y `Decorator` le proporciona una interfaz mejorada.
+- `Adapter` cambia la interfaz de un objeto existente mientras que `Decorator` mejora un objeto sin cambiar su interfaz. Además, `Decorator` soporta la composición recursiva, lo cual no es posible al utilizar `Adapter`.
