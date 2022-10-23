@@ -44,6 +44,7 @@ Modifica el comportamiento cada vez que cambia el estado interno. Crea un objeto
 - Operaciones con muchas condiciones anidadas que dependen del estado del objeto
 
 <b>Solución</b>
+
 Se implementa una clase para cada estado diferente del objeto, y el desarrollo de cada metodo segun un estado determinado.
 El objeto de la clase a la que le pertenece dichos estados resuelve los distintos comportamientos segun su estado, con instancias de dichas clases de estado. Asi, siempre tiene presente en un objeto ele stado actual y se comunica con este para resolver sus responsabilidades.
 
@@ -67,3 +68,7 @@ El objeto de la clase a la que le pertenece dichos estados resuelve los distinto
   - Permite a un objeto cambiar de clase en el runtime
 - Desventajas:
   - Incrementa el numero de subclases
+
+<b>Relación con otros patrones</b>
+  
+El patron `State` puede ser considerado una extensión del `Strategy`. Ambos patrones estan basados en composicion: Pueden cambiar el comportamiento del contexto delegando parte del trabajo a subclases. Mientras que el `Strategy` convierte objetos en estructuras completamente independientes del contexto, `State` permite a estos objetos alterar el estado del contexto si lo necesitan.
