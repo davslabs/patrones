@@ -380,6 +380,8 @@ Mantener una referencia al objeto real y controlar el acceso a él. El proxy pue
 
 <b>Implementación</b>
 
+![image](https://user-images.githubusercontent.com/5508796/197643510-5a5a4ca2-55d9-4a7c-93f1-fe2b44c3e838.png)
+
 <b>Ventajas y desventajas</b>
 - Ventajas:
   - Se puede retrasar la creacion del objeto real hasta que sea necesario.
