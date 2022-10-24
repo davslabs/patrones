@@ -250,7 +250,7 @@ Se define una dependencia uno a muchos entre objetos, de tal forma que cuando un
 - Definir una clase `ConcreteSubject` que extiende la clase `Subject` y notifica a sus dependientes cuando cambia su estado.
 - Definir una clase `ConcreteObserver` que implementa la interfaz `Observer` y mantiene una referencia a un objeto `ConcreteSubject` concreto.
 
-<b>Modelo push:</b> el sujeto envia a los observadores información sobre los cambios.
+<b>Modelo push:</b> el sujeto envia a los observadores información sobre los cambios. </br>
 <b>Modelo pull:</b> los observadores solicitan información al sujeto explicitamente.
 
 ![image](https://user-images.githubusercontent.com/5508796/197629669-a3513d78-64f6-4eea-bb22-fc949c8ad9e6.png)
