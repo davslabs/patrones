@@ -17,6 +17,7 @@
   - [Patrón Observer](#patrón-observer)
   - [Patrón Factory](#patrón-factory)
   - [Patrón Decorator](#patrón-decorator)
+  - [Patrón Memento](#patrón-memento)
 
 ## Elementos principales
 1. Nombre: Describe en pocas palabras un problema de diseño
@@ -331,3 +332,26 @@ Se encierra al componente en otro objeto que añade las responsabilidades desead
 - `Adapter` cambia la interfaz de un objeto, mientras que `Decorator` añade responsabilidades sin cambiar su interfaz.
 - `Adapter` proporciona una interfaz diferente a la que tiene el objeto, mientras que `Proxy` proporciona la misma interfaz que el objeto y `Decorator` proporciona una interfaz mejorada.
 - `Composite` y `Decorator` tienen estructuras similares, pero tienen diferentes propósitos. `Composite` se usa para representar jerarquias de objetos, mientras que `Decorator` se usa para añadir responsabilidades a objetos individuales.
+
+## Patrón Memento
+[Volver](#listado-de-patrones)
+
+Permite guardar y restaurar el estado previo de un objeto sin revelar los detalles de su implementación.
+
+<b>Problema</b>
+
+Muchas veces es necesario almacenar el estado interno de un objeto para poder restaurarlo en un momento posterior.
+
+<b>Solución</b>
+
+`Memento` implementa un objeto llamado memento que almacena una instantanea del estado interno de otro objeto. Solo el creador puede almacenar y restaurar el estado del memento.
+
+<b>Implementación</b>
+
+<b>Ventajas y desventajas</b>
+- Ventajas:
+  - Se pueden producir instantanead del estado del objeto sin violar el encapsulamiento.
+  - Puede simplificar el codigo de la originadora, permitiendo que la cuidadora mantenga el historial de estados.
+- Desventajas:
+  - Consumo de memoria adicional.
+  - Las cuidadoras deben rastrear el ciclo de vida de los mementos.
