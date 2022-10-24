@@ -350,6 +350,8 @@ Muchas veces es necesario almacenar el estado interno de un objeto para poder re
 
 <b>Implementación</b>
 
+![image](https://user-images.githubusercontent.com/5508796/197639779-6bcd17ed-67bf-42e2-a538-3d098a919945.png)
+
 <b>Ventajas y desventajas</b>
 - Ventajas:
   - Se pueden producir instantanead del estado del objeto sin violar el encapsulamiento.
