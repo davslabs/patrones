@@ -18,6 +18,7 @@
   - [Patrón Factory](#patrón-factory)
   - [Patrón Decorator](#patrón-decorator)
   - [Patrón Memento](#patrón-memento)
+  - [Patrón Proxy](#patrón-proxy)
 
 ## Elementos principales
 1. Nombre: Describe en pocas palabras un problema de diseño
@@ -360,3 +361,35 @@ Muchas veces es necesario almacenar el estado interno de un objeto para poder re
   - Consumo de memoria adicional.
   - Las cuidadoras deben rastrear el ciclo de vida de los mementos.
 
+## Patrón Proxy
+[Volver](#listado-de-patrones)
+
+Proporciona un sustituto o marcador de posición para otro objeto para controlar el acceso a él, realizar algo antes o después de la solicitud o retrasar la creación de un objeto costoso.
+
+<b>Problema</b>
+
+- Para retrasar el coste de la creacion e inicializacion de un objeto hasta el momento en que se necesita.
+- Para controlar el acceso a un objeto. Por ejemplo, cuando se quiere que ciertos clientes puedan acceder a un objeto y otros no.
+- Cuando necesitas guardar en cache el resultado de una operacion costosa para que no se vuelva a realizar.
+- Ejecucion local de un servicio remoto.
+- Solicitudes de registro: Mantener un historial de solicitudes al objeto.
+
+<b>Solución</b>
+
+Mantener una referencia al objeto real y controlar el acceso a él. El proxy puede retrasar la creacion del objeto real, controlar el acceso al objeto real y añadir responsabilidades adicionales.
+
+<b>Implementación</b>
+
+<b>Ventajas y desventajas</b>
+- Ventajas:
+  - Se puede retrasar la creacion del objeto real hasta que sea necesario.
+  - Se puede controlar el acceso al objeto real.
+  - Se puede añadir responsabilidades adicionales al objeto real.
+- Desventajas:
+  - El codigo puede volverse mas complejo al añadir nuevas responsabilidades.
+  - Se retrasa el acceso al objeto real.
+
+<b>Relación con otros patrones</b>
+- `Adapter` cambia la interfaz de un objeto, mientras que `Proxy` proporciona la misma interfaz que el objeto y `Decorator` proporciona una interfaz mejorada.
+- `Facade` es similar a `Proxy` en el sentido de que ambos pueden almacenar temporalmente una entidad compleja e inicializarla por su cuenta. Sin embargo, `Proxy` tiene la misma interfaz que la entidad que representa, lo que lo hace intercambiable.
+- `Decorator` y `Proxy` tienen estructuras similares, pero propósitos muy distintos. Ambos patrones se basan en el principio de composición, por el que un objeto debe delegar parte del trabajo a otro. La diferencia es que, normalmente, un Proxy gestiona el ciclo de vida de su objeto de servicio por su cuenta, mientras que la composición de los Decoradores siempre está controlada por el cliente.
