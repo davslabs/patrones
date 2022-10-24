@@ -253,6 +253,8 @@ Se define una dependencia uno a muchos entre objetos, de tal forma que cuando un
 <b>Modelo push:</b> el sujeto envia a los observadores información sobre los cambios.
 <b>Modelo pull:</b> los observadores solicitan información al sujeto explicitamente.
 
+![image](https://user-images.githubusercontent.com/5508796/197629669-a3513d78-64f6-4eea-bb22-fc949c8ad9e6.png)
+
 <b>Ventajas y desventajas</b>
 - Ventajas:
   - Se pueden establecer relaciones entre objetos en tiempo de ejecución.
