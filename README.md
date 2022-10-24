@@ -282,6 +282,8 @@ Existen dos variantes principales de la clase `Creator`:
 - `Concreta`: El creador es una clase concreta y proporciona una implementacion predeterminada del metodo de fabricacion. (Es posible tener una clase abstracta, que defina una implementacion predeterminada del metodo de fabricacion, y que las subclases puedan sobreescribirlo si es necesario).
 - `Abstracta`: No proporciona implementacion predeterminada del metodo de fabricacion. Debe ser sobreescribido por las subclases.
 
+![image](https://user-images.githubusercontent.com/5508796/197632381-ff3dec30-35fe-4dad-b1e7-b328c6fc1fae.png)
+
 Metodos de fabricacion parametrizados:
 - El metodo de fabricacion puede recibir parametros que determinen el tipo de objeto a crear.
 - Permite crear objetos de diferentes tipos, pero con una interfaz común.
