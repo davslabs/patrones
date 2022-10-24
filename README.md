@@ -16,6 +16,7 @@
   - [Patrón Adapter](#patrón-adapter)
   - [Patrón Observer](#patrón-observer)
   - [Patrón Factory](#patrón-factory)
+  - [Patrón Decorator](#patrón-decorator)
 
 ## Elementos principales
 1. Nombre: Describe en pocas palabras un problema de diseño
@@ -298,3 +299,35 @@ Metodos de fabricacion parametrizados:
 
 <b>Relación con otros patrones</b>
 - `Factory` es parecido a `Builder` en que ambos encapsulan la creacion de objetos, pero `Factory` se enfoca en la creacion de objetos complejos, mientras que `Builder` se enfoca en la creacion de objetos complejos paso a paso.
+
+## Patrón Decorator
+[Volver](#listado-de-patrones)
+
+Asigna responsabilidades adicionales a un objeto dinamicamente. Ofrece una alternativa flexible a la herencia para extender la funcionalidad.
+
+<b>Problema</b>
+
+A veces se quiere añadir responsabilidades a objetos individuales en vez de a toda una clase.
+
+<b>Solución</b>
+
+Se encierra al componente en otro objeto que añade las responsabilidades deseadas. Este objeto se llama `Decorator`. El decorador se ajusta a la interfaz del componente que decora. El decorador reenvia las peticiones al componente y puede realizar acciones adicionales antes o despues del reenvio.
+
+<b>Implementación</b>
+- Se define una interfaz para los objetos que se pueden decorar.
+- Se define un objeto al que se le pueden añadir responsabilidades.
+- Se crea un `Decorator` que mantiene una referencia al objeto que se va a decorar, define una interfaz que se ajusta a la interfaz del componente.
+  
+<b>Ventajas y desventajas</b>
+- Ventajas:
+  - Se pueden añadir responsabilidades a objetos individuales en tiempo de ejecución.
+  - Se pueden combinar varias responsabilidades.
+  - Se puede eliminar responsabilidades en tiempo de ejecución.
+  - Principio de responsabilidad unica: se separa la responsabilidad de la creacion de la responsabilidad de la extension.
+- Desventajas:
+  - El codigo puede volverse mas complejo al añadir nuevas responsabilidades.
+
+<b>Relación con otros patrones</b>
+- `Adapter` cambia la interfaz de un objeto, mientras que `Decorator` añade responsabilidades sin cambiar su interfaz.
+- `Adapter` proporciona una interfaz diferente a la que tiene el objeto, mientras que `Proxy` proporciona la misma interfaz que el objeto y `Decorator` proporciona una interfaz mejorada.
+- `Composite` y `Decorator` tienen estructuras similares, pero tienen diferentes propósitos. `Composite` se usa para representar jerarquias de objetos, mientras que `Decorator` se usa para añadir responsabilidades a objetos individuales.
