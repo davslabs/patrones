@@ -15,6 +15,7 @@
   - [Patrón Composite](#patrón-composite)
   - [Patrón Adapter](#patrón-adapter)
   - [Patrón Observer](#patrón-observer)
+  - [Patrón Factory](#patrón-factory)
 
 ## Elementos principales
 1. Nombre: Describe en pocas palabras un problema de diseño
@@ -261,3 +262,37 @@ Se define una dependencia uno a muchos entre objetos, de tal forma que cuando un
   - Principio abierto/cerrado: se puede agregar nuevos servicios sin modificar el cliente.
 - Desventajas:
   - Los suscriptores pueden ser notificados en cualquier orden.
+
+## Patrón Factory
+[Volver](#listado-de-patrones)
+
+Define una interfaz para crear un objeto, pero deja a las subclases decidir que clase instanciar. Permite que una clase delegue la creación de objetos a sus subclases.
+
+<b>Problema</b>
+
+Cuando un objeto debe crear una instancia y solo conoce una clase abstracta y no sabe definir que subclase instanciar.
+
+<b>Solución</b>
+
+Facilitar la creación de objetos sin especificar la clase concreta que se va a instanciar, delegando esta responsabilidad a las subclases.
+
+<b>Implementación</b>
+
+Existen dos variantes principales de la clase `Creator`:
+- `Concreta`: El creador es una clase concreta y proporciona una implementacion predeterminada del metodo de fabricacion. (Es posible tener una clase abstracta, que defina una implementacion predeterminada del metodo de fabricacion, y que las subclases puedan sobreescribirlo si es necesario).
+- `Abstracta`: No proporciona implementacion predeterminada del metodo de fabricacion. Debe ser sobreescribido por las subclases.
+
+Metodos de fabricacion parametrizados:
+- El metodo de fabricacion puede recibir parametros que determinen el tipo de objeto a crear.
+- Permite crear objetos de diferentes tipos, pero con una interfaz común.
+
+<b>Ventajas y desventajas</b>
+- Ventajas:
+  - Evitar el acoplamiento entre el cliente y las clases concretas.
+  - Principio de responsabilidad unica: se separa la creacion de objetos de su uso.
+  - Principio abierto/cerrado: se puede agregar nuevos productos sin modificar el cliente.
+- Desventajas:
+  - El codigo puede volverse mas complejo al agregar nuevas subclases.
+
+<b>Relación con otros patrones</b>
+- `Factory` es parecido a `Builder` en que ambos encapsulan la creacion de objetos, pero `Factory` se enfoca en la creacion de objetos complejos, mientras que `Builder` se enfoca en la creacion de objetos complejos paso a paso.
