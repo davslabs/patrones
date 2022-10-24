@@ -318,6 +318,8 @@ Se encierra al componente en otro objeto que añade las responsabilidades desead
 - Se define una interfaz para los objetos que se pueden decorar.
 - Se define un objeto al que se le pueden añadir responsabilidades.
 - Se crea un `Decorator` que mantiene una referencia al objeto que se va a decorar, define una interfaz que se ajusta a la interfaz del componente.
+
+![image](https://user-images.githubusercontent.com/5508796/197638051-bf09e097-0d6b-4b4f-97be-a50b4c65ce16.png)
   
 <b>Ventajas y desventajas</b>
 - Ventajas:
@@ -355,3 +357,4 @@ Muchas veces es necesario almacenar el estado interno de un objeto para poder re
 - Desventajas:
   - Consumo de memoria adicional.
   - Las cuidadoras deben rastrear el ciclo de vida de los mementos.
+
