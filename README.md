@@ -2,11 +2,19 @@
 
 ## Listado de patrones
 
-1. [Patrón State](#patrón-state)
-2. [Patrón Strategy](#patrón-strategy)
-3. [Patrón Singleton](#patrón-singleton)
-4. [Patrón Composite](#patrón-composite)
-5. [Patrón Adapter](#patrón-adapter)
+- [Patrones de diseño](#patrones-de-diseño)
+  - [Listado de patrones](#listado-de-patrones)
+  - [Elementos principales](#elementos-principales)
+  - [Clasificación](#clasificación)
+    - [Proposito](#proposito)
+    - [Ambito](#ambito)
+- [Patrones](#patrones)
+  - [Patrón State](#patrón-state)
+  - [Patrón Strategy](#patrón-strategy)
+  - [Patrón Singleton](#patrón-singleton)
+  - [Patrón Composite](#patrón-composite)
+  - [Patrón Adapter](#patrón-adapter)
+  - [Patrón Observer](#patrón-observer)
 
 ## Elementos principales
 1. Nombre: Describe en pocas palabras un problema de diseño
@@ -44,6 +52,7 @@
 # Patrones
 
 ## Patrón State
+[Volver](#listado-de-patrones)
 
 Modifica el comportamiento cada vez que cambia el estado interno. Crea un objeto por cada estado posible del objeto que lo llama.
 
@@ -82,6 +91,7 @@ El objeto de la clase a la que le pertenece dichos estados resuelve los distinto
 El patron `State` puede ser considerado una extensión del `Strategy`. Ambos patrones estan basados en composicion: Pueden cambiar el comportamiento del contexto delegando parte del trabajo a subclases. Mientras que el `Strategy` convierte objetos en estructuras completamente independientes del contexto, `State` permite a estos objetos alterar el estado del contexto si lo necesitan.
 
 ## Patrón Strategy
+[Volver](#listado-de-patrones)
 
 Define una familia de algoritmos, encapsula cada uno de llos y los hace intercambiables.
 
@@ -119,6 +129,7 @@ Entre las posibilidades disponibles se encuentran:
 - El patron `Decorator` permite cambiarle la "piel" al objeto, mientras que el patron `Strategy` permite cambiarle las "tripas.
 
 ## Patrón Singleton
+[Volver](#listado-de-patrones)
 
 Garantiza que una clase solo tenga una instancia, y proporciona un punto de acceso global a ella.
 
@@ -155,6 +166,7 @@ Todas las implementaciones de esta patron recaen en los mismos dos pasos en comu
 - Una clase `Facade` puede ser transformada en un `Singleton` dado a que un solo objeto `Facade` es suficiente en la mayoria de los casos.
 
 ## Patrón Composite
+[Volver](#listado-de-patrones)
 
 Permite que los clientes traten de manera uniforme a los objetos individuales y a los compuestos.
 
@@ -187,6 +199,7 @@ Diseñar una estructura que permita ser usada de forma simple o compuesta de la 
   - No obstante, los patrones también pueden colaborar: puedes utilizar el Decorator para extender el comportamiento de un objeto específico del árbol Composite.
 
 ## Patrón Adapter
+[Volver](#listado-de-patrones)
 
 Convierte la interfaz de una clase en otra interfaz que espera el cliente. Permite que clases trabajen juntas que de otra manera no podrían por no tener la misma interfaz.
 
@@ -217,3 +230,32 @@ Se logra adaptando la clase necesaria mediante una del dominio, que se encargara
 - `Facade` define una nueva interfaz para objetos existentes, mientras que `Adapter` intenta hacer que la interfaz existente sea utilizable. Normalmente `Adapter` sólo envuelve un objeto, mientras que `Facade` trabaja con todo un subsistema de objetos.
 - `Adapter` proporciona una interfaz diferente al objeto envuelto, `Proxy` le proporciona la misma interfaz y `Decorator` le proporciona una interfaz mejorada.
 - `Adapter` cambia la interfaz de un objeto existente mientras que `Decorator` mejora un objeto sin cambiar su interfaz. Además, `Decorator` soporta la composición recursiva, lo cual no es posible al utilizar `Adapter`.
+
+## Patrón Observer
+[Volver](#listado-de-patrones)
+
+Define una dependencia de uno a muchos entre objetos de manera que cuando un objeto cambia de estado, todos sus dependientes son notificados y actualizados automáticamente.
+
+<b>Problema</b>
+
+Se necesita consistencia entre clases relacionadas, pero con un bajo acoplamiento.
+
+<b>Solución</b>
+
+Se define una dependencia uno a muchos entre objetos, de tal forma que cuando un objeto cambia de estado, todos sus dependientes son notificados y actualizados automáticamente. Se utiliza un mecanismo de publicación/inscripción para notificar a los observadores.
+
+<b>Implementación</b>
+- Definir una clase `Subject` que mantiene una lista de sus dependientes, llamados `Observers`, y provee un mecanismo para añadir o eliminar dependientes.
+- Definir una interfaz `Observer` que declara un método de actualización que es llamado por el `Subject`.
+- Definir una clase `ConcreteSubject` que extiende la clase `Subject` y notifica a sus dependientes cuando cambia su estado.
+- Definir una clase `ConcreteObserver` que implementa la interfaz `Observer` y mantiene una referencia a un objeto `ConcreteSubject` concreto.
+
+<b>Modelo push:</b> el sujeto envia a los observadores información sobre los cambios.
+<b>Modelo pull:</b> los observadores solicitan información al sujeto explicitamente.
+
+<b>Ventajas y desventajas</b>
+- Ventajas:
+  - Se pueden establecer relaciones entre objetos en tiempo de ejecución.
+  - Principio abierto/cerrado: se puede agregar nuevos servicios sin modificar el cliente.
+- Desventajas:
+  - Los suscriptores pueden ser notificados en cualquier orden.
